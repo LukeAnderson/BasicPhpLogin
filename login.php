@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <title>Login</title>
-</head>
+<?php
+$pageTitle = "Signup";
+require_once("Shared/header.php");
+?>
 
 <body id="index-body">
     <div class="login-page">
@@ -20,9 +14,11 @@
             </form>
         </div>
     </div>
+</body>
 
     <img src="https://purepng.com/public/uploads/large/purepng.com-military-jetflightvehiclejetplanemilitaryaircraftairplane-981525065891nmz02.png"
         width="250" class="plane">
-</body>
 
-</html>
+<?php
+require_once("Shared/footer.php");
+?>
