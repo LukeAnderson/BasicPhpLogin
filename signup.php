@@ -11,7 +11,7 @@ require_once("Shared/header.php");
                 <input type="password" name ='password' placeholder="password" />
                 <input type="text" name = 'email' placeholder="email address" />
                 <button name="submit">create</button>
-                <p class="message">Already registered? <a href="home.php">Sign In</a></p>
+                <p class="message">Already registered? <a href="login.php">Sign In</a></p>
             </form>
         </div>
     </div>
