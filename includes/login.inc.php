@@ -1,9 +1,36 @@
 <?php
 
-require_once("databaseHandler.php");
+require_once("databaseHandler.php");//conn
 
-$loginURL = "../login.php";
-var_dump($_POST);
+const LOGIN_URL = "../login.php";
+function GoToLogin($msg){
+    if(!empty($msg))
+        $msg = "?".$msg;
+    header("Location: " .LOGIN_URL.$msg);
+    exit();
+}
+
+//if form button was not clicked
+if(!isset($_POST['submit'])){
+    GoToLogin("submit=unclicked");
+}
+$_POST['submit'] = 1;
+
+
+foreach ($_POST as $name => $val){
+    if(empty($_POST[$name]))
+    {
+        GoToLogin($name."=empty");
+    }
+}
+
+
+
+#check if input characters are valid
+if(!ctype_alnum($_POST['username']))
+{
+    GoToLogin("username=invalid");
+}
 
 
 // prepare and bind
@@ -25,10 +52,4 @@ echo($result);
 $stmt->close();
 $conn->close();
 
-//header("Location: " . $loginURL); /* Redirect browser */
-//exit();
-
-
-
-//$stmt = $conn->prepare("SELECT email_address FROM users WHERE username=?");
-
+GoToLogin("");

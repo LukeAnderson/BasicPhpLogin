@@ -9,7 +9,7 @@ require_once("Shared/header.php");
             <form class="login-form" action = "includes/login.inc.php" method = "POST">
                 <input type="text" name='username' placeholder="username"/>
                 <input type="password" name='password'  placeholder="password"/>
-                <button>login</button>
+                <button name="submit">login</button>
                 <p class="message">Not registered? <a href="signup.php">Create an account</a></p>
             </form>
         </div>
